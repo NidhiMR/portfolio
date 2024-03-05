@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+<link rel="stylesheet" href="port.css">
+    <title>Portfolio</title>
+
+</head>
+<body>
+    
+    <nav><div class ="nav_content">
+        <div class="logo"><a href="#">Nidhi M R</a></div>
+        <label for="check" class="checkbox">
+        <i class="ri-menu-line"></i>
+        
+        </label>
+        <input type ="checkbox" name="check" id="check"/>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Resume</a></li>
+            <li><a href="#">Portfolio</a></li>
+        </ul>
+    </div></nav>
+    <section class="section">
+        <div class="section__container">
+            <div class="content">
+                <h1><span id ="typewriter"></span><span id="cursor">|</span>
+           <!---      TEXT       <p class ="subtitle">Hello</p>
+            <h1 class="title">
+            <br> I'm<span> Nidhi M R<br></span>
+            </h1>   </h1>      --> 
+            <p class ="description">
+                Welcome to my portfolio!<br> I'm a computer science student with a passion for web development. I find joy in the learning process, discovering new concepts, and mastering skills that help me create captivating websites. My current focus is on honing my skills in HTML, CSS, and JavaScript, aiming to craft user-friendly and visually appealing web experiences. I am enthusiastic about the journey ahead, eager to learn more, and committed to growing my skills in web development.
+            </p>
+            <div class="action__btns">
+                <button class="portfolio">Portfolio</button>
+            </div>
+            </div>
+            <div  class="image">
+                <img src =" " alt=" "/>
+            </div>
+        </div>
+        <script>
+            function sleep(ms) {
+              return new Promise((resolve) => setTimeout(resolve, ms));
+            }
+      
+            const phrases = ["Hello ", "I'm ", "Nidhi ","MR"," R"];
+            const el = document.getElementById("typewriter");
+      
+            let sleepTime = 100;
+      
+            let curPhraseIndex = 0;
+      
+            const writeLoop = async () => {
+              while (true) {
+                let curWord = phrases[curPhraseIndex];
+      
+                for (let i = 0; i < curWord.length; i++) {
+                  el.innerText = curWord.substring(0, i + 1);
+                  await sleep(sleepTime);
+                }
+      
+                await sleep(sleepTime * 10);
+      
+                for (let i = curWord.length; i > 0; i--) {
+                  el.innerText = curWord.substring(0, i - 1);
+                  await sleep(sleepTime);
+                }
+      
+                await sleep(sleepTime * 5);
+      
+                if (curPhraseIndex === phrases.length - 1) {
+                  curPhraseIndex = 0;
+                } else {
+                  curPhraseIndex++;
+                }
+              }
+            };
+      
+            writeLoop();
+          </script>
+    </section>
+</body>
+</html>
